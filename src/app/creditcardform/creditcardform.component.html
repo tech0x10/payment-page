@@ -1,0 +1,24 @@
+<div class="columns">
+   <div class="column">
+      <app-card [name]="formofcard.controls.name.value" [expiration]="formofcard.controls.expiration.value"
+         [cardnumber]="formofcard.controls.cardnumber.value"></app-card>
+   </div>
+   <div class="column">
+      <form [formGroup]="formofcard">
+         <app-input [control]="formofcard.controls.name" label="Name"></app-input>
+         <app-input [control]="formofcard.controls.cardnumber" label="Card Number"></app-input>
+         <div class="columns">
+            <div class="column"><app-input [control]="formofcard.controls.expiration"
+                  label="Expiration MM/YY"></app-input>
+            </div>
+            <div class="column"><app-input [control]="formofcard.controls.securitycode"
+                  label="Security Code"></app-input>
+            </div>
+         </div>
+         <div class="buttons">
+            <button [disabled]="formofcard.invalid" class="button is-primary">Submit</button>
+            <button class="button is-warning" type="button" (click)="onreset()">Reset</button>
+         </div>
+      </form>
+   </div>
+</div>
